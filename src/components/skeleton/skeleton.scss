@@ -1,0 +1,15 @@
+.skeleton {
+    display: flex;
+    &__header {
+        display: grid;
+        grid-template-columns: 160px auto;
+        column-gap: 10px;
+        align-items: center;
+    }
+    &__block {
+        height: 160px;
+        width: 160px;
+        background-color: #C4C4C4;
+        margin-top: 15px;
+    }
+}
