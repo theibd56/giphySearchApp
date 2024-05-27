@@ -1,0 +1,31 @@
+.link {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    &-container {
+        display: flex;
+        justify-content: center;
+    }
+    &-bookmarks {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        top: -95px;
+        transition: all 0.8s;
+        &-wrapper {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            a {
+                margin-top: 5px;
+            }
+        }
+        &:hover {
+            top: 0px;
+        }
+        svg {
+            width: 40px;
+            height: 132px;
+        }
+    }
+}
