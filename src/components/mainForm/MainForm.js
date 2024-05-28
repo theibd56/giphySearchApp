@@ -1,20 +1,17 @@
 import { useState } from 'react';
 import searchImg from '../../resources/search-normal.svg';
 import popularImg from '../../resources/popular.svg';
-import funnyImg from '../../resources/funny.svg';
 import Skeleton from '../skeleton/Skeleton';
-import { useHttp } from '../hooks/http.hook';
 import './mainForm.scss';
 
 const MainForm = () => {
 
     const [inputValue, setInputValue] = useState('');
-    const {loading, request, error, clearError} = useHttp();
     const [gifList, setGifList] = useState([]);
 
     const   _apiBase = 'https://api.giphy.com/v1/gifs/',
             _apiKey = 'api_key=gG7GN2QoqDL8uN2HNZivgL42pB68Tq1j',
-            _baseLimit = 6;
+            _baseLimit = 24;
 
     const getGif = (question = 'anime') => {
         fetch(`${_apiBase}search?${_apiKey}&q=${question}&limit=${_baseLimit}`)
@@ -68,19 +65,11 @@ const MainForm = () => {
                 <div className="form__popular">
                     <div className="form__popular-title form__title">
                         <img src={popularImg} alt="popular smile" />
-                        Popular gifs
+                        {gifList.length === 0 ? 'Enter your query in the search field' : 'Popular gifs according to your request'}
+                        
                     </div>
                     <div className="form__popular-wrapper form__wrapper">
-                        {gifList.length == 0 ? <Skeleton/> : renderItems(gifList)}
-                    </div>
-                </div>
-                <div className="form__funny">
-                    <div className="form__funny-title form__title">
-                        <img src={funnyImg} alt="funny smile" />
-                        Funny gifs
-                    </div>
-                    <div className="form__funny-wrapper form__wrapper">
-
+                        {gifList.length === 0 ? <Skeleton/> : renderItems(gifList)}
                     </div>
                 </div>
             </div>

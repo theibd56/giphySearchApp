@@ -16,6 +16,18 @@ const Skeleton = () => {
                 <div className="pulse skeleton__header">
                     <div className="pulse skeleton__block"></div>
                 </div>
+                <div className="pulse skeleton__header">
+                    <div className="pulse skeleton__block"></div>
+                </div>
+                <div className="pulse skeleton__header">
+                    <div className="pulse skeleton__block"></div>
+                </div>
+                <div className="pulse skeleton__header">
+                    <div className="pulse skeleton__block"></div>
+                </div>
+                <div className="pulse skeleton__header">
+                    <div className="pulse skeleton__block"></div>
+                </div>
             </div>
         </>
     )

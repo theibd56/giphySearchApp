@@ -1,5 +1,7 @@
 .skeleton {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     &__header {
         display: grid;
         grid-template-columns: 160px auto;

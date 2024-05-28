@@ -13,9 +13,9 @@
     border-radius: 24px;
     background-color: #f7f9fc;
     overflow-y: auto;
-    position: relative;
+    scroll-margin-right: 200px;
     &::-webkit-scrollbar {
-        width: 14px;
+        width: 10px; left:-10px;
     }
     &__title {
         display: flex;
@@ -52,7 +52,8 @@
     &__wrapper {
             display: flex;
             gap: 12px;
-            overflow-x: auto;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
             padding-bottom: 5px;
             &::-webkit-scrollbar {
                 width: 100%;
@@ -65,11 +66,15 @@
             &::-webkit-scrollbar-thumb {
                 background: #e3eaf5;
                 border-radius: 20px;
-              }
+            }
         &-item {
             width: 160px;
             height: 160px;
-            background: #d9d9d9;
+            transition: all .3s;
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+            }
         }
         &-link {
             min-width: 160px;
