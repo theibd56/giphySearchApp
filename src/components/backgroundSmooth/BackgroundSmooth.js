@@ -1,8 +1,8 @@
 import './backgroundSmooth.scss';
 
 const BackgroundSmooth = () => {
-    const MIN_SPEED = 2.5
-    const MAX_SPEED = 5.5
+    const MIN_SPEED = 1.5
+    const MAX_SPEED = 3.5
 
     const randomNumber = (min, max) => {
       return Math.random() * (max - min) + min

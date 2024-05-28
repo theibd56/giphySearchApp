@@ -12,8 +12,14 @@
     padding: 40px;
     border-radius: 24px;
     background-color: #f7f9fc;
+    box-shadow: 17px 20px 40px rgba(228, 224, 224, 0.21);
     overflow-y: auto;
     scroll-margin-right: 200px;
+    transition: all .3s;
+    &:hover {
+        box-shadow: 20px 20px 41px rgba(228, 224, 224, .26);
+        transform: scale(1.019);
+    }
     &::-webkit-scrollbar {
         width: 10px; left:-10px;
     }
