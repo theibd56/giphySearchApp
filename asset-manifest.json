@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/giphySearchApp/static/css/main.8b271d40.css",
+    "main.js": "/giphySearchApp/static/js/main.afc85ee3.js",
+    "static/media/insta.svg": "/giphySearchApp/static/media/insta.50e51b4b8758249bb0d0baeef9dc4952.svg",
+    "static/media/telegram.svg": "/giphySearchApp/static/media/telegram.c01c9069067fb300df94f39c4ae3cea7.svg",
+    "static/media/github.svg": "/giphySearchApp/static/media/github.93b2e7064ab9d80be152f925bf720edb.svg",
+    "index.html": "/giphySearchApp/index.html",
+    "static/media/popular.svg": "/giphySearchApp/static/media/popular.18a8e7542e9af9b6ab6fff817ef3385f.svg",
+    "static/media/search-normal.svg": "/giphySearchApp/static/media/search-normal.caa02ed62b7f34a5819397c05d2bc6b0.svg",
+    "main.8b271d40.css.map": "/giphySearchApp/static/css/main.8b271d40.css.map",
+    "main.afc85ee3.js.map": "/giphySearchApp/static/js/main.afc85ee3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8b271d40.css",
+    "static/js/main.afc85ee3.js"
+  ]
+}
