@@ -1,20 +1,41 @@
 # Gif animation search application
-The gif search application is an animation made using CRA and GiphyAPI. The user enters a query into the search bar and gif animations for the query appear in the lower block
+This is a compact and easy-to-use and aesthetically appealing demonstration of a gif search application. Users have the ability to search for GIFs and click on the gif they like on the GIPHY website.
+My goal was to develop a modern UI/UX design from scratch: from design concept to implementation.
+
+![image](https://github.com/theibd56/giphySearchApp/assets/84173880/487500c6-8daf-472d-a040-007d3d9a2ec5)
+
+[Check the Live Demo](theibd56.github.io/giphySearchApp/)
 
 ## Stack
-- HTML5
-- CSS3
-- JavaScript
-- React
-- Sass
-- WebPack
-- NPM
-- Gulp
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Webpack](https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white)
+![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
 
-## Screenshots of the application
-![image](https://github.com/theibd56/giphySearchApp/assets/84173880/13396999-3a37-4ae9-aa25-72d43d8463f2)
-![image](https://github.com/theibd56/giphySearchApp/assets/84173880/487500c6-8daf-472d-a040-007d3d9a2ec5)
-![image](https://github.com/theibd56/giphySearchApp/assets/84173880/ba4c51d3-d317-4bd1-990f-61ecf3ae6272)
+## Features
+
+* the user can get gif animation on request
+* the user can go to the gif animation they like on the giphy website
+
+## How to run locally
+
+* install dependencies
+```js
+npm install
+// or
+yarn
+```
+* start local server
+```js
+npm start 
+
+// or
+
+yarn 
+```
 
 ## The project team
 - [Bezhinarov Igor](https://t.me/theibd56) — Front-End Engineer
