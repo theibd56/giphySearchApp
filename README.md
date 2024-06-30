@@ -20,22 +20,31 @@ My goal was to develop a modern UI/UX design from scratch: from design concept t
 * the user can get gif animation on request
 * the user can go to the gif animation they like on the giphy website
 
-## How to run locally
-
-* install dependencies
-```js
-npm install
-// or
-yarn
-```
-* start local server
-```js
-npm start 
-
-// or
-
-yarn 
+## Installation
+Install giphySearchApp with npm
+```bash
+  npm install giphySearchApp
+  cd giphySearchApp
 ```
 
-## The project team
-- [Bezhinarov Igor](https://t.me/theibd56) — Front-End Engineer
+## Run Locally
+Clone the project
+```bash
+  git clone https://github.com/theibd56/giphySearchApp
+```
+Go to the project directory
+```bash
+  cd giphySearchApp
+```
+Install dependencies
+```bash
+  npm install
+```
+Start the server
+```bash
+  npm start
+```
+
+## Author
+- [Igor Bezhinarov](https://github.com/theibd56) — Front-End Engineer
+- [Nikita Mikholap](https://www.behance.net/nickmikholap) — UI/UX Designer
