@@ -87,4 +87,17 @@
             height: 160px;
         }
     }
+    &__more {
+        cursor: pointer;
+
+        text-align: center;
+
+        max-width: 166px;
+        padding: 15px;
+        border-radius: 8px;
+        background: #fff;
+
+        margin: 0 auto;
+        margin-top: 15px;
+    }
 }
