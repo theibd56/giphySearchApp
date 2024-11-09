@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/giphySearchApp/static/css/main.f159fd66.css",
-    "main.js": "/giphySearchApp/static/js/main.0b4ee841.js",
+    "main.css": "/giphySearchApp/static/css/main.65cb6c38.css",
+    "main.js": "/giphySearchApp/static/js/main.79d2602b.js",
     "static/media/insta.svg": "/giphySearchApp/static/media/insta.50e51b4b8758249bb0d0baeef9dc4952.svg",
     "static/media/telegram.svg": "/giphySearchApp/static/media/telegram.c01c9069067fb300df94f39c4ae3cea7.svg",
     "static/media/github.svg": "/giphySearchApp/static/media/github.93b2e7064ab9d80be152f925bf720edb.svg",
     "index.html": "/giphySearchApp/index.html",
     "static/media/popular.svg": "/giphySearchApp/static/media/popular.18a8e7542e9af9b6ab6fff817ef3385f.svg",
     "static/media/search-normal.svg": "/giphySearchApp/static/media/search-normal.caa02ed62b7f34a5819397c05d2bc6b0.svg",
-    "main.f159fd66.css.map": "/giphySearchApp/static/css/main.f159fd66.css.map",
-    "main.0b4ee841.js.map": "/giphySearchApp/static/js/main.0b4ee841.js.map"
+    "main.65cb6c38.css.map": "/giphySearchApp/static/css/main.65cb6c38.css.map",
+    "main.79d2602b.js.map": "/giphySearchApp/static/js/main.79d2602b.js.map"
   },
   "entrypoints": [
-    "static/css/main.f159fd66.css",
-    "static/js/main.0b4ee841.js"
+    "static/css/main.65cb6c38.css",
+    "static/js/main.79d2602b.js"
   ]
 }
