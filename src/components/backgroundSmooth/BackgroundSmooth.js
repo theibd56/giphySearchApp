@@ -1,8 +1,9 @@
+import React, { useEffect } from 'react';
 import './backgroundSmooth.scss';
 
 const BackgroundSmooth = () => {
-    const MIN_SPEED = 1.5
-    const MAX_SPEED = 3.5
+    const MIN_SPEED = 0.5
+    const MAX_SPEED = 2
 
     const randomNumber = (min, max) => {
       return Math.random() * (max - min) + min
@@ -67,8 +68,13 @@ const BackgroundSmooth = () => {
         
         requestAnimationFrame(update)
     }
-    
-    initBlobs()
+
+    useEffect(() => {
+        initBlobs();
+        return () => {
+
+        };
+    }, []);
 
     return (
         <div className="bouncing-blobs-container">
