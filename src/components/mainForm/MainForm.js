@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import {useHttp} from "../../hooks/http.hook";
 import searchImg from '../../resources/search-normal.svg';
 import popularImg from '../../resources/popular.svg';
@@ -15,8 +15,8 @@ const MainForm = () => {
     const   _apiBase = 'https://api.giphy.com/v1/gifs/',
             _apiKey = 'api_key=gG7GN2QoqDL8uN2HNZivgL42pB68Tq1j';
 
-    const getGif = async (question = 'anime') => {
-        const res = await request(`${_apiBase}search?${_apiKey}&q=${question}&limit=${_baseLimit}`);
+    const getGif = async (question = 'anime', limit = _baseLimit) => {
+        const res = await request(`${_apiBase}search?${_apiKey}&q=${question}&limit=${limit}`);
         if(res !== undefined) {
             return setGifList(res)
         }
@@ -48,10 +48,13 @@ const MainForm = () => {
         }
     }
 
-    const loadMore = () => {
-        _setBaseLimit(_baseLimit => _baseLimit + 8)
-        getGif(inputValue)
-    }
+    const loadMore = useCallback(() => {
+        _setBaseLimit(prevLimit => {
+            const newLimit = prevLimit + 8;
+            getGif(inputValue, newLimit);
+            return newLimit;
+        });
+    }, [inputValue, getGif]);
 
     return (
         <div className="container">
@@ -83,7 +86,7 @@ const MainForm = () => {
                 </div>
                 {
                     gifList.data
-                        ? (gifList.data.length > 49 ? null : <div className="form__more" onClick={loadMore}>Load more</div>)
+                        ? (gifList.data.length > 48 ? null : <div className="form__more" onClick={loadMore}>Load more</div>)
                         : null
                 }
             </div>
