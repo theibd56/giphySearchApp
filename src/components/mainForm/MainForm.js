@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import {useHttp} from "../../hooks/http.hook";
 import searchImg from '../../resources/search-normal.svg';
 import popularImg from '../../resources/popular.svg';
 import Skeleton from '../skeleton/Skeleton';
 import './mainForm.scss';
 
 const MainForm = () => {
+    const {request} = useHttp();
 
     const [inputValue, setInputValue] = useState('');
     const [gifList, setGifList] = useState([]);
@@ -13,19 +15,12 @@ const MainForm = () => {
     const   _apiBase = 'https://api.giphy.com/v1/gifs/',
             _apiKey = 'api_key=gG7GN2QoqDL8uN2HNZivgL42pB68Tq1j';
 
-    const getGif = (question = 'anime') => {
-        fetch(`${_apiBase}search?${_apiKey}&q=${question}&limit=${_baseLimit}`)
-        .then((response) => {
-            if (!response.ok) {
-                alert("No gif found");
-                throw new Error("No gif found");
-            }
-            return response.json();
-        })
-        .then((data) => setGifList(data))
-
-        console.log('zapros')
-    }
+    const getGif = async (question = 'anime') => {
+        const res = await request(`${_apiBase}search?${_apiKey}&q=${question}&limit=${_baseLimit}`);
+        if(res !== undefined) {
+            return setGifList(res)
+        }
+    };
 
     const searchGiphy = () => {
         getGif(inputValue)
