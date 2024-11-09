@@ -1,16 +1,21 @@
 import { useState, useCallback } from 'react';
 import {useHttp} from "../../hooks/http.hook";
+
+import Skeleton from '../skeleton/Skeleton';
+import Modal from '../modal/Modal';
+import './mainForm.scss';
+
 import searchImg from '../../resources/search-normal.svg';
 import popularImg from '../../resources/popular.svg';
-import Skeleton from '../skeleton/Skeleton';
-import './mainForm.scss';
 
 const MainForm = () => {
     const {request} = useHttp();
 
     const [inputValue, setInputValue] = useState('');
     const [gifList, setGifList] = useState([]);
-    const [_baseLimit, _setBaseLimit] = useState(8)
+    const [_baseLimit, _setBaseLimit] = useState(8);
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [selectedGif, setSelectedGif] = useState(null);
 
     const   _apiBase = 'https://api.giphy.com/v1/gifs/',
             _apiKey = 'api_key=gG7GN2QoqDL8uN2HNZivgL42pB68Tq1j';
@@ -18,7 +23,9 @@ const MainForm = () => {
     const getGif = async (question = 'anime', limit = _baseLimit) => {
         const res = await request(`${_apiBase}search?${_apiKey}&q=${question}&limit=${limit}`);
         if(res !== undefined) {
+            console.log(res)
             return setGifList(res)
+
         }
     };
 
@@ -26,24 +33,37 @@ const MainForm = () => {
         getGif(inputValue)
     }
 
+    const openModal = (gif) => {
+        setSelectedGif(gif);
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+        setSelectedGif(null);
+    };
+
     const renderItems = (arr) => {
         const items = arr.data.map((item) => {
             return (
-                <a href={item.url} className="form__wrapper-link" key={item.id}><img
-                src={item.images.original.url} 
-                alt={item.username}
-                className="form__wrapper-item"/></a>
-            )
-        })
+                <div key={item.id} onClick={() => openModal(item)}>
+                    <img
+                        src={item.images.original.url}
+                        alt={item.username}
+                        className="form__wrapper-item"
+                    />
+                </div>
+            );
+        });
         return (
             <div className="form__popular-wrapper form__wrapper">
                 {items}
             </div>
-        )
-    }
+        );
+    };
 
     const onKeyUp = (e) => {
-        if(e.key === 'Enter') {
+        if (e.key === 'Enter') {
             getGif(inputValue)
         }
     }
@@ -90,6 +110,7 @@ const MainForm = () => {
                         : null
                 }
             </div>
+            <Modal isOpen={isModalOpen} onClose={closeModal} gif={selectedGif} />
         </div>
     )
 }
